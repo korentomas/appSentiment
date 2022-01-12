@@ -5,7 +5,7 @@ import pandas as pd
 st.title('Sentiment Analysis G8 DigitalHouse')
 st.markdown('This app analyses the sentiment behind a sentence.')
 
-classifier = joblib.load('wellness-detection-model.pkl')
+classifier = joblib.load('sentiment-model.pkl')
 
 def run():
     with st.form(key='Type sentence'):
