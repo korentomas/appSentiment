@@ -1,3 +1,7 @@
 streamlit
 pandas
 joblib
+tweepy
+st_aggrid
+regex
+string
