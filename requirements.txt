@@ -4,3 +4,4 @@ joblib
 tweepy
 streamlit-aggrid
 regex
+sklearn
