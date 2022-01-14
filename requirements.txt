@@ -2,6 +2,6 @@ streamlit
 pandas
 joblib
 tweepy
-st_aggrid
+streamlit-aggrid
 regex
 string
