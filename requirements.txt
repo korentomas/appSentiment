@@ -5,3 +5,6 @@ tweepy
 streamlit-aggrid
 regex
 sklearn
+wordcloud
+seaborn
+matplotlib
