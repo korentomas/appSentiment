@@ -27,7 +27,7 @@ classifier = joblib.load('sentiment-model.pkl') #importamos el modelo
 #Remove punctuations, links, mentions and \r\n new line characters
 @st.cache(suppress_st_warning=True)
 def strip_all_entities(text): 
-    text = re.sub(r"(?:\RT?)\S+", "", text) #removes retweets
+    #text = re.sub(r"(?:\RT?)\S+", "", text) #removes retweets
     text = text.replace('\r', '').replace('\n', ' ').replace('\n', ' ').lower() #remove \n and \r and lowercase
     text = re.sub(r"(?:\@|https?\://)\S+", "", text) #remove links and mentions
     text = re.sub(r'[^\x00-\x7f]',r'', text) #remove non utf8/ascii characters such as '\x9a\x91\x97\x9a\x97'
@@ -76,9 +76,10 @@ def run():
             0, 50, 10) #Cantidad de tweets que vamos a traer
         submit_button = st.form_submit_button(label='Submit')
         if submit_button:
-            tweets = tw.Cursor(api.search_tweets, q=search_words,
-                               lang='en').items(number_of_tweets) #Cuando se apreta el boton submit, busca lo que le pedimos
-            tweet_list = [i.text for i in tweets] #Lista de tweets 
+           
+            tweets = tw.Cursor(api.search_tweets, q=search_words + " -filter:retweets",
+                               lang='en', tweet_mode='extended').items(number_of_tweets) #Cuando se apreta el boton submit, busca lo que le pedimos
+            tweet_list = [i.full_text for i in tweets] #Lista de tweets 
 
             texts_new = [] #Variable nueva para los tweets limpios
             for t in tweet_list:
