@@ -8,4 +8,4 @@ sklearn
 wordcloud
 seaborn
 matplotlib
-ntlk
+nltk
