@@ -13,6 +13,8 @@ import nltk
 nltk.download('stopwords')
 
 stopwords_es = [word for word in stopwords.words('spanish')]
+stopwords_es.append('q')
+stopwords_es.append('si')
 
 #Claves de Twitter API
 consumer_key = 'w6J8TpaCuj0iJx3zl9QYGSSfn'
@@ -75,7 +77,7 @@ def remove_mult_spaces(text): # remove multiple spaces
 
 #Título de la página
 st.title('Sentiment Analysis G8 DigitalHouse')
-
+st.markdown('**:cricket: [Tomás Korenblit](https://www.linkedin.com/in/tomas-pablo-korenblit/) | :brain: [Néstor Javier Blanco](https://www.linkedin.com/in/tomas-pablo-korenblit/) | :martial_arts_uniform: [Florencia Cerutti](https://www.linkedin.com/in/tomas-pablo-korenblit/) | :seedling: [Nicolás Caputo](https://www.linkedin.com/in/pablo-nicolas-caputo/)**', unsafe_allow_html=True)
 
 
 # Arranca la parte ejecutable
@@ -95,8 +97,8 @@ def run():
             search_words = st.text_input(
                 'Introducí el nombre para el que querés saber el sentimiento.') #Campo para poner lo que queremos buscar
             number_of_tweets = st.number_input(
-                'Introducí el numero para la cantidad de tweets recientes de los cuales querés saber el sentimiento (Maximo 50 tweets)',
-                0, 50, 10) #Cantidad de tweets que vamos a traer
+                'Introducí el numero para la cantidad de tweets recientes de los cuales querés saber el sentimiento (Maximo 100 tweets)',
+                1, 100, 10) #Cantidad de tweets que vamos a traer
             submit_button = st.form_submit_button(label='Enviar')
             
             if submit_button:
@@ -161,10 +163,13 @@ def run():
                 result = classifier_es.predict((result_new))
                 #Aca le decimos como mostrar los resultados de la predicción
 
-                if result[0] == 'NEG':
+                if result[0] == 'Neg':
                     st.error('Negativo')
-                elif result[0] == 'POS':
+                elif result[0] == 'Pos':
                     st.success('Positivo')
+                else:
+                    st.write('algo extraño sucedió:')
+                    st.write(result[0])
     
     else:
         #Aclaración de como funciona
@@ -176,8 +181,8 @@ def run():
             search_words = st.text_input(
                 'Enter the name for which you want to know the sentiment') #Campo para poner lo que queremos buscar
             number_of_tweets = st.number_input(
-                'Enter the number of latest tweets for which you want to know the sentiment(Maximum 50 tweets)',
-                0, 50, 10) #Cantidad de tweets que vamos a traer
+                'Enter the number of latest tweets for which you want to know the sentiment(Maximum 100 tweets)',
+                1, 100, 10) #Cantidad de tweets que vamos a traer
             submit_button = st.form_submit_button(label='Submit')
             if submit_button:
             
