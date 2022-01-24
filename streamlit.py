@@ -77,7 +77,7 @@ def remove_mult_spaces(text): # remove multiple spaces
 
 #Título de la página
 st.title('Sentiment Analysis G8 DigitalHouse')
-st.markdown('**:cricket: [Tomás Korenblit](https://www.linkedin.com/in/tomas-pablo-korenblit/) | :brain: [Néstor Javier Blanco](https://www.linkedin.com/in/tomas-pablo-korenblit/) | :martial_arts_uniform: [Florencia Cerutti](https://www.linkedin.com/in/tomas-pablo-korenblit/) | :seedling: [Nicolás Caputo](https://www.linkedin.com/in/pablo-nicolas-caputo/)**', unsafe_allow_html=True)
+st.markdown('**:milky_way: [Tomás Korenblit](https://www.linkedin.com/in/tomas-pablo-korenblit/) | :brain: [Néstor Javier Blanco](https://www.linkedin.com/in/tomas-pablo-korenblit/) | :martial_arts_uniform: [Florencia Cerutti](https://www.linkedin.com/in/tomas-pablo-korenblit/) | :seedling: [Nicolás Caputo](https://www.linkedin.com/in/pablo-nicolas-caputo/)**', unsafe_allow_html=True)
 
 
 # Arranca la parte ejecutable
