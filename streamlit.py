@@ -163,9 +163,9 @@ def run():
                 result = classifier_es.predict((result_new))
                 #Aca le decimos como mostrar los resultados de la predicción
 
-                if result[0] == 'Neg':
+                if result[0] == 'NEG':
                     st.error('Negativo')
-                elif result[0] == 'Pos':
+                elif result[0] == 'POS':
                     st.success('Positivo')
                 else:
                     st.write('algo extraño sucedió:')
